@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <title>Customer Portal - Login / Register</title>
     <style>
-        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; -webkit-font-smoothing: antialiased; background: #f0f2f5; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .auth-container { background: white; padding: 35px; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08); width: 320px; }
-        h2 { text-align: center; color: #1a1a1a; margin-bottom: 24px; font-weight: 600; }
-        input { width: 100%; padding: 12px; margin: 10px 0; border: 1px solid #d1d5db; border-radius: 8px; box-sizing: border-box; font-size: 14px; outline: none; transition: border-color 0.2s; }
-        input:focus { border-color: #ff4757; }
-        button { width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; margin-top: 12px; font-size: 15px; transition: background 0.2s; }
+        body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
+        .auth-container { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 340px; }
+        h2 { text-align: center; color: #1a202c; margin-bottom: 25px; font-weight: 600; }
+        input { width: 100%; padding: 12px; margin: 10px 0 18px 0; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 14px; transition: border 0.2s; }
+        input:focus { outline: none; border-color: #ff4757; }
+        button { width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: background 0.2s; }
         button:hover { background: #ff6b81; }
-        .switch-text { text-align: center; margin-top: 20px; font-size: 14px; color: #4b5563; cursor: pointer; }
+        .switch-text { text-align: center; margin-top: 20px; font-size: 13px; color: #718096; cursor: pointer; }
         .switch-text span { color: #ff4757; font-weight: 600; }
     </style>
 </head>
 <body>
 
-<div class="auth-container">    
-  <h2 id="formTitle">Customer Register</h2>
+    <div class="auth-container">
+        <h2 id="formTitle">Customer Register</h2>
         <input type="text" id="phoneInput" placeholder="Enter Phone Number">
         <input type="password" id="passInput" placeholder="Enter Password">
         <button id="authBtn" onclick="handleAuth()">Register</button>
         
-   <div class="switch-text" onclick="toggleMode()">
+        <div class="switch-text" onclick="toggleMode()">
             <span id="switchLabel">Already have an account? Login here</span>
         </div>
     </div>
@@ -76,7 +76,7 @@
                 return;
             }
             localStorage.setItem('activeCustomerPhone', phone);
-            window.location.href ='https://kshitij-bhuwania.github.io/Menu/';
+            window.location.href = 'https://kshitij-bhuwania.github.io/Menu/';
         }
     }
 </script>
