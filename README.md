@@ -76,7 +76,7 @@
                 return;
             }
             localStorage.setItem('activeCustomerPhone', phone);
-            window.location.href = 'https://kshitij-bhuwania.github.io/Admin/';
+            window.location.href ='https://kshitij-bhuwania.github.io/Menu/';
         }
     }
 </script>
