@@ -2,10 +2,11 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Customer Portal - Login / Register</title>
     <style>
         body { font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; background: #f4f6f9; display: flex; justify-content: center; align-items: center; height: 100vh; margin: 0; }
-        .auth-container { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 340px; }
+        .auth-container { background: white; padding: 35px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 340px; box-sizing: border-box; }
         h2 { text-align: center; color: #1a202c; margin-bottom: 25px; font-weight: 600; }
         input { width: 100%; padding: 12px; margin: 10px 0 18px 0; border: 1px solid #e2e8f0; border-radius: 8px; box-sizing: border-box; font-size: 14px; transition: border 0.2s; }
         input:focus { outline: none; border-color: #ff4757; }
@@ -17,13 +18,13 @@
 </head>
 <body>
 
-    <div class="auth-container">
+  <div class="auth-container">
         <h2 id="formTitle">Customer Register</h2>
         <input type="text" id="phoneInput" placeholder="Enter Phone Number">
         <input type="password" id="passInput" placeholder="Enter Password">
         <button id="authBtn" onclick="handleAuth()">Register</button>
         
-        <div class="switch-text" onclick="toggleMode()">
+   <div class="switch-text" onclick="toggleMode()">
             <span id="switchLabel">Already have an account? Login here</span>
         </div>
     </div>
@@ -76,6 +77,8 @@
                 return;
             }
             localStorage.setItem('activeCustomerPhone', phone);
+            
+            // Redirecting to your hosted Menu page link upon successful login
             window.location.href = 'https://kshitij-bhuwania.github.io/Menu/';
         }
     }
