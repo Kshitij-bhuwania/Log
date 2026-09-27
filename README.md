@@ -24,7 +24,7 @@
   </a>
 </div>
   <br>
-  <br><br><br><br><br>
+  <br><br><br>
   <div class="auth-container">
         <h2 id="formTitle">Customer Register</h2>
         <input type="text" id="phoneInput" placeholder="Enter Phone Number">
