@@ -20,7 +20,6 @@
 
  <div style="text-align: center;">
 <img src="https://i.postimg.cc/SsSZBQ9q/1000037254-removebg-preview.png" alt="Description" style="width: 300px;">
-  </a>
 </div>
   <br>
   <br><br><br>
