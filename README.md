@@ -6,7 +6,7 @@
     <style>
         body { 
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
+            background: #ffffff;
             display: flex; 
             justify-content: center; 
             align-items: center; 
@@ -16,60 +16,61 @@
             overflow: hidden;
         }
 
-        /* Subtle floating street food pattern overlay */
+        /* Subtle transparent restaurant food background overlay */
         body::before {
             content: "";
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
-            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
-            background-size: 30px 30px;
-            pointer-events: none;
+            background-image: url('https://images.unsplash.com/photo-1601050690597-df0568f70950?w=1200'); /* Indian street food / restaurant vibe */
+            background-size: cover;
+            background-position: center;
+            opacity: 0.12; /* Low transparency */
+            filter: blur(4px); /* Soft blur effect */
+            z-index: 1;
         }
 
         .auth-container { 
-            background: rgba(255, 255, 255, 0.15); 
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
+            background: rgba(255, 255, 255, 0.92); 
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
             padding: 40px 35px; 
-            border-radius: 24px; 
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
+            border-radius: 20px; 
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.08); 
             width: 350px; 
             box-sizing: border-box; 
-            border: 1px solid rgba(255, 255, 255, 0.3);
+            border: 1px solid rgba(226, 232, 240, 0.8);
             z-index: 2;
         }
 
         h2 { 
             text-align: center; 
-            color: #ffffff; 
+            color: #1a202c; 
             margin-bottom: 25px; 
             font-weight: 700; 
-            letter-spacing: 0.8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            letter-spacing: 0.5px;
         }
 
         input { 
             width: 100%; 
             padding: 14px; 
             margin: 10px 0 20px 0; 
-            border: 1px solid rgba(255, 255, 255, 0.4); 
+            border: 1px solid #cbd5e1; 
             border-radius: 12px; 
             box-sizing: border-box; 
             font-size: 15px; 
-            background: rgba(255, 255, 255, 0.9);
+            background: #ffffff;
             color: #2d3748;
-            transition: all 0.3s ease; 
+            transition: all 0.2s ease; 
         }
 
         input::placeholder {
-            color: #718096;
+            color: #94a3b8;
         }
 
         input:focus { 
             outline: none; 
-            border-color: #ffffff; 
-            background: rgba(255, 255, 255, 1);
-            box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.25);
+            border-color: #ff5722; 
+            box-shadow: 0 0 0 4px rgba(255, 87, 34, 0.15);
         }
 
         button { 
@@ -83,14 +84,14 @@
             cursor: pointer; 
             font-size: 16px; 
             letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
-            transition: all 0.3s ease; 
+            box-shadow: 0 4px 14px rgba(255, 87, 34, 0.35);
+            transition: all 0.2s ease; 
         }
 
         button:hover { 
             background: #f4511e; 
-            transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.6);
+            transform: translateY(-1px);
+            box-shadow: 0 6px 18px rgba(255, 87, 34, 0.45);
         }
 
         button:active {
@@ -101,7 +102,7 @@
 <body>
 
  <div style="text-align: center; position: absolute; top: 10%; z-index: 2;">
-<img src="https://i.postimg.cc/SsSZBQ9q/1000037254-removebg-preview.png" alt="Chaat & Puchka Logo" style="width: 260px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));">
+<img src="https://i.postimg.cc/SsSZBQ9q/1000037254-removebg-preview.png" alt="Chaat & Puchka Logo" style="width: 260px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.08));">
 </div>
 
   <div class="auth-container">
