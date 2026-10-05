@@ -11,10 +11,8 @@
         input:focus { outline: none; border-color: #ff4757; }
         button { width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: background 0.2s; }
         button:hover { background: #ff6b81; }
-        .switch-text { text-align: center; margin-top: 18px; font-size: 13px; color: #718096; cursor: pointer; }
+        .switch-text { text-align: center; margin-top: 20px; font-size: 13px; color: #718096; cursor: pointer; }
         .switch-text span { color: #ff4757; font-weight: 600; }
-        .forgot-text { text-align: right; margin-top: 5px; margin-bottom: 18px; font-size: 13px; color: #718096; cursor: pointer; }
-        .forgot-text span { color: #ff4757; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -30,11 +28,11 @@
         <input type="password" id="passInput" placeholder="Enter Password">
         <input type="password" id="newPassInput" placeholder="Enter New Password" style="display: none;">
         
-        <div id="forgotSection" class="forgot-text" style="display: none;" onclick="toggleForgotMode()">
-            <span>Forgot Password?</span>
-        </div>
-
         <button id="authBtn" onclick="handleAuth()">Register</button>
+        
+        <div class="switch-text" onclick="toggleForgotMode()" id="forgotContainer" style="display: none;">
+            <span id="forgotLabel">Forgot Password?</span>
+        </div>
 
         <div class="switch-text" onclick="toggleMode()">
             <span id="switchLabel">Already have an account? Login here</span>
@@ -57,25 +55,25 @@
         const title = document.getElementById('formTitle');
         const btn = document.getElementById('authBtn');
         const switchLabel = document.getElementById('switchLabel');
-        const forgotSection = document.getElementById('forgotSection');
+        const forgotContainer = document.getElementById('forgotContainer');
         const newPassInput = document.getElementById('newPassInput');
         const passInput = document.getElementById('passInput');
 
         newPassInput.style.display = 'none';
 
-        if (mode === 'register') {
+        if (mode === 'register' || mode === 'forgot') {
             mode = 'login';
             title.innerText = 'Customer Login';
             btn.innerText = 'Login';
             switchLabel.innerText = "Don't have an account? Register";
-            forgotSection.style.display = 'block';
+            forgotContainer.style.display = 'block';
             passInput.placeholder = 'Enter Password';
         } else {
             mode = 'register';
             title.innerText = 'Customer Register';
             btn.innerText = 'Register';
             switchLabel.innerText = 'Already have an account? Login here';
-            forgotSection.style.display = 'none';
+            forgotContainer.style.display = 'none';
             passInput.placeholder = 'Enter Password';
         }
     }
@@ -84,9 +82,9 @@
         mode = 'forgot';
         document.getElementById('formTitle').innerText = 'Reset Password';
         document.getElementById('authBtn').innerText = 'Update Password';
-        document.getElementById('forgotSection').style.display = 'none';
+        document.getElementById('forgotContainer').style.display = 'none';
         document.getElementById('switchLabel').innerText = 'Back to Login';
-        document.getElementById('passInput.placeholder') = 'Enter Existing Password (optional)';
+        document.getElementById('passInput').placeholder = 'Enter Existing Password (optional)';
         document.getElementById('newPassInput').style.display = 'block';
     }
 
