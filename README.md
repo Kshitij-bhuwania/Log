@@ -6,32 +6,37 @@
     <style>
         body { 
             font-family: 'Segoe UI', system-ui, -apple-system, sans-serif; 
-            background: linear-gradient(135deg, #ff7e5f 0%, #feb47b 50%, #ff5722 100%);
-            background-size: 200% 200%;
-            animation: gradientBG 10s ease infinite;
+            background: linear-gradient(135deg, #ff6a00 0%, #ee0979 100%);
             display: flex; 
             justify-content: center; 
             align-items: center; 
             height: 100vh; 
             margin: 0; 
+            position: relative;
+            overflow: hidden;
         }
 
-        @keyframes gradientBG {
-            0% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
-            100% { background-position: 0% 50%; }
+        /* Subtle floating street food pattern overlay */
+        body::before {
+            content: "";
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.15) 2px, transparent 2px);
+            background-size: 30px 30px;
+            pointer-events: none;
         }
 
         .auth-container { 
-            background: rgba(255, 255, 255, 0.18); 
-            backdrop-filter: blur(14px);
-            -webkit-backdrop-filter: blur(14px);
+            background: rgba(255, 255, 255, 0.15); 
+            backdrop-filter: blur(16px);
+            -webkit-backdrop-filter: blur(16px);
             padding: 40px 35px; 
             border-radius: 24px; 
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15); 
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2); 
             width: 350px; 
             box-sizing: border-box; 
-            border: 1px solid rgba(255, 255, 255, 0.35);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            z-index: 2;
         }
 
         h2 { 
@@ -40,7 +45,7 @@
             margin-bottom: 25px; 
             font-weight: 700; 
             letter-spacing: 0.8px;
-            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
+            text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
         }
 
         input { 
@@ -51,7 +56,7 @@
             border-radius: 12px; 
             box-sizing: border-box; 
             font-size: 15px; 
-            background: rgba(255, 255, 255, 0.85);
+            background: rgba(255, 255, 255, 0.9);
             color: #2d3748;
             transition: all 0.3s ease; 
         }
@@ -70,7 +75,7 @@
         button { 
             width: 100%; 
             padding: 14px; 
-            background: #d84315; 
+            background: #ff5722; 
             color: white; 
             border: none; 
             border-radius: 12px; 
@@ -78,14 +83,14 @@
             cursor: pointer; 
             font-size: 16px; 
             letter-spacing: 0.5px;
-            box-shadow: 0 6px 20px rgba(216, 67, 21, 0.4);
+            box-shadow: 0 6px 20px rgba(255, 87, 34, 0.4);
             transition: all 0.3s ease; 
         }
 
         button:hover { 
-            background: #bf360c; 
+            background: #f4511e; 
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(216, 67, 21, 0.5);
+            box-shadow: 0 8px 25px rgba(255, 87, 34, 0.6);
         }
 
         button:active {
@@ -95,14 +100,14 @@
 </head>
 <body>
 
- <div style="text-align: center; position: absolute; top: 12%;">
-<img src="https://i.postimg.cc/SsSZBQ9q/1000037254-removebg-preview.png" alt="Chaat Puchka Logo" style="width: 260px; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));">
+ <div style="text-align: center; position: absolute; top: 10%; z-index: 2;">
+<img src="https://i.postimg.cc/SsSZBQ9q/1000037254-removebg-preview.png" alt="Chaat & Puchka Logo" style="width: 260px; filter: drop-shadow(0 4px 10px rgba(0,0,0,0.2));">
 </div>
 
   <div class="auth-container">
         <h2 id="formTitle">Customer Login</h2>
         <input type="text" id="phoneInput" placeholder="Enter Phone Number">
-        <button id="authBtn" onclick="handleAuth()">Enter Store</button>
+        <button id="authBtn" onclick="handleAuth()">Login</button>
     </div>
 
 <script>
