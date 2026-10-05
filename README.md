@@ -11,10 +11,10 @@
         input:focus { outline: none; border-color: #ff4757; }
         button { width: 100%; padding: 12px; background: #ff4757; color: white; border: none; border-radius: 8px; font-weight: 600; cursor: pointer; font-size: 14px; transition: background 0.2s; }
         button:hover { background: #ff6b81; }
-        .switch-text { text-align: center; margin-top: 15px; font-size: 13px; color: #718096; cursor: pointer; }
+        .switch-text { text-align: center; margin-top: 18px; font-size: 13px; color: #718096; cursor: pointer; }
         .switch-text span { color: #ff4757; font-weight: 600; }
-        .forgot-text { text-align: right; margin-top: -10px; margin-bottom: 15px; font-size: 12px; color: #718096; cursor: pointer; }
-        .forgot-text span { color: #ff4757; }
+        .forgot-text { text-align: right; margin-top: 5px; margin-bottom: 18px; font-size: 13px; color: #718096; cursor: pointer; }
+        .forgot-text span { color: #ff4757; font-weight: 500; }
     </style>
 </head>
 <body>
@@ -29,11 +29,12 @@
         <input type="text" id="phoneInput" placeholder="Enter Phone Number">
         <input type="password" id="passInput" placeholder="Enter Password">
         <input type="password" id="newPassInput" placeholder="Enter New Password" style="display: none;">
-        <button id="authBtn" onclick="handleAuth()">Register</button>
         
         <div id="forgotSection" class="forgot-text" style="display: none;" onclick="toggleForgotMode()">
             <span>Forgot Password?</span>
         </div>
+
+        <button id="authBtn" onclick="handleAuth()">Register</button>
 
         <div class="switch-text" onclick="toggleMode()">
             <span id="switchLabel">Already have an account? Login here</span>
@@ -85,7 +86,7 @@
         document.getElementById('authBtn').innerText = 'Update Password';
         document.getElementById('forgotSection').style.display = 'none';
         document.getElementById('switchLabel').innerText = 'Back to Login';
-        document.getElementById('passInput').placeholder = 'Enter Existing Password (or leave blank)';
+        document.getElementById('passInput.placeholder') = 'Enter Existing Password (optional)';
         document.getElementById('newPassInput').style.display = 'block';
     }
 
@@ -142,7 +143,6 @@
             localStorage.setItem('users', JSON.stringify(users));
             alert('Password reset successful! Please login with your new password.');
             
-            // Switch back to login state
             document.getElementById('newPassInput').value = '';
             document.getElementById('passInput').value = '';
             toggleMode();
